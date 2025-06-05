@@ -7,6 +7,86 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSortableTables();
     initializeKeyboardNavigation();
     initializeModal();
+    initializePPCChart();
+
+    function initializePPCChart() {
+        const ctx = document.getElementById('ppcChart');
+        if (!ctx) return;
+
+        const data = {
+            labels: ['Lunovus', 'MaxiVision', 'Advanced Theraceuticals'],
+            datasets: [
+                {
+                    label: 'PPC Sales',
+                    data: [18555.35, 4999.13, 5364.76],
+                    backgroundColor: '#1ecbe133',
+                    borderColor: '#1ecbe1',
+                    borderWidth: 2,
+                    order: 2
+                },
+                {
+                    label: 'PPC Spend',
+                    data: [6588.37, 1255.19, 4535.59],
+                    backgroundColor: '#1e90ff33',
+                    borderColor: '#1e90ff',
+                    borderWidth: 2,
+                    order: 1
+                }
+            ]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#23262f'
+                        },
+                        ticks: {
+                            color: '#b0b6c3',
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#b0b6c3'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#b0b6c3',
+                            usePointStyle: true,
+                            padding: 20
+                        }
+                    },
+                    datalabels: {
+                        color: '#e0e6ed',
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        };
+
+        new Chart(ctx, config);
+    }
     
     // Tab Navigation System
     function initializeTabs() {
@@ -66,6 +146,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeMetricCounters() {
         const metricValues = document.querySelectorAll('.metric-value[data-target]');
         
+        // Add click animation for metric cards
+        document.querySelectorAll('.metric-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98) translateY(-4px)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+        
         metricValues.forEach(element => {
             const target = parseFloat(element.getAttribute('data-target'));
             const prefix = element.textContent.includes('$') ? '$' : '';
@@ -119,19 +209,47 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeBrandCards() {
         const brandCards = document.querySelectorAll('.brand-card.clickable');
         
+        // Add ripple effect
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const ripple = document.createElement('span');
+            const rect = button.getBoundingClientRect();
+            
+            const diameter = Math.max(rect.width, rect.height);
+            const radius = diameter / 2;
+            
+            ripple.style.width = ripple.style.height = `${diameter}px`;
+            ripple.style.left = `${event.clientX - rect.left - radius}px`;
+            ripple.style.top = `${event.clientY - rect.top - radius}px`;
+            ripple.className = 'ripple';
+            
+            const existingRipple = button.querySelector('.ripple');
+            if (existingRipple) {
+                existingRipple.remove();
+            }
+            
+            button.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+        
         brandCards.forEach(card => {
-            card.addEventListener('click', function() {
+            card.addEventListener('click', function(event) {
+                createRipple(event);
                 const brandData = getBrandData(this.getAttribute('data-brand'));
                 showBrandModal(brandData);
             });
-            
-            // Add hover effect
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
+        });
+        
+        // Add click animation for objective cards
+        document.querySelectorAll('.objective-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98) translateY(-3px)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
             });
         });
     }

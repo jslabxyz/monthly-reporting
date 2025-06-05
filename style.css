@@ -441,6 +441,29 @@ body {
     margin-bottom: 16px;
 }
 
+.ppc-overview {
+    background: #23262f;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 24px rgba(30, 203, 225, 0.04);
+    border: 1px solid #23262f;
+    margin-bottom: 30px;
+}
+
+.ppc-header {
+    margin-bottom: 32px;
+}
+
+.chart-container {
+    width: 100%;
+    height: 300px;
+    margin: 24px 0;
+    background: #20232a;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #23262f;
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
     .metrics-grid, .brand-cards, .objectives-grid {

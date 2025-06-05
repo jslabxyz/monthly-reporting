@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monthly Amazon Performance Report - May 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -280,7 +282,12 @@
                 <div id="ppc" class="tab-content">
                     <h2>PPC Performance</h2>
                     <div class="ppc-overview">
-                        <h3>Portfolio PPC Metrics - May 2025</h3>
+                        <div class="ppc-header">
+                            <h3>Portfolio PPC Metrics - May 2025</h3>
+                            <div class="chart-container">
+                                <canvas id="ppcChart"></canvas>
+                            </div>
+                        </div>
                         <div class="metrics-grid">
                             <div class="metric-card">
                                 <div class="metric-label">Total Spend</div>
@@ -296,11 +303,6 @@
                                 <div class="metric-label">Portfolio ACoS</div>
                                 <div class="metric-value">42.8%</div>
                                 <div class="metric-change warning">+0.3pp</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-label">Portfolio ROAS</div>
-                                <div class="metric-value">2.34</div>
-                                <div class="metric-change negative">-0.01</div>
                             </div>
                         </div>
                         <table class="data-table sortable">

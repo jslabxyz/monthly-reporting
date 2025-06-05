@@ -33,7 +33,7 @@ body {
     margin-bottom: 8px;
 }
 .dashboard-subtitle {
-    font-size: 2.2rem;
+    font-size: 1.2rem;
     opacity: 0.95;
     margin-bottom: 16px;
 }
@@ -304,27 +304,6 @@ body {
     transition: color 0.3s ease;
 }
 
-.brand-metric {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
-    border-bottom: 1px solid #23262f;
-}
-
-.brand-metric:last-child {
-    border-bottom: none;
-}
-
-.brand-metric .metric-value {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 0;
-}
-
-.brand-metric .metric-label {
-    display: none;
-}
 .brand-card:hover .brand-header h3 {
     color: #fff;
 }

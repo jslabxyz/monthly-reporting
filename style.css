@@ -306,27 +306,17 @@ body {
 
 .brand-metric {
     display: flex;
-    justify-content: space-between;
     padding: 10px 0;
     border-bottom: 1px solid #23262f;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
 }
 
 .brand-metric:last-child {
     border-bottom: none;
 }
 
-.brand-metric .metric-label {
-    display: inline;
-    color: #b0b6c3;
-    font-size: 2.2rem;
-    font-weight: 500;
-}
-
-.brand-metric .metric-value {
-    color: #fff;
-    font-size: 2.2rem;
-    font-weight: 800;
-}
 .brand-metric .metric-label {
     display: none;
 }

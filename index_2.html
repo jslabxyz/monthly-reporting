@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Amazon Performance Report - May 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header Section -->
+        <header class="dashboard-header">
+            <div class="container">
+                <h1 class="dashboard-title">MONTHLY AMAZON PERFORMANCE REPORT - MAY 2025</h1>
+                <div class="executive-summary">
+                    <h2>Executive Summary</h2>
+                    <p>Portfolio revenue reached $131,702 in May 2025, with 4,051 units sold delivering +3.5% month-over-month growth. Advanced Theraceuticals led brand performance with +21.2% growth, while PPC performance showed strong results with +30.6% spend increase driving +29.7% sales growth. MaxiVision achieved +134.0% PPC sales growth and traffic increased +67.4% across all brands.</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Key Metrics Overview -->
+        <section class="metrics-overview">
+            <div class="container">
+                <div class="metrics-grid">
+                    <div class="metric-card animate-in">
+                        <div class="metric-value" data-target="131701.55">$0</div>
+                        <div class="metric-label">Total Revenue</div>
+                        <div class="metric-change positive">+3.5% MoM</div>
+                    </div>
+                    <div class="metric-card animate-in">
+                        <div class="metric-value" data-target="4051">0</div>
+                        <div class="metric-label">Units Sold</div>
+                        <div class="metric-change positive">+3.6% MoM</div>
+                    </div>
+                    <div class="metric-card animate-in">
+                        <div class="metric-value" data-target="32.51">$0</div>
+                        <div class="metric-label">Average Order Value</div>
+                        <div class="metric-change negative">-0.1% MoM</div>
+                    </div>
+                    <div class="metric-card animate-in">
+                        <div class="metric-value" data-target="10646">0</div>
+                        <div class="metric-label">Total Sessions</div>
+                        <div class="metric-change positive">+67.4% MoM</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab Navigation -->
+        <nav class="tab-navigation">
+            <div class="container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="portfolio">Portfolio <span class="tab-key">1</span></button>
+                    <button class="tab-btn" data-tab="brands">Brands <span class="tab-key">2</span></button>
+                    <button class="tab-btn" data-tab="ppc">PPC <span class="tab-key">3</span></button>
+                    <button class="tab-btn" data-tab="traffic">Traffic <span class="tab-key">4</span></button>
+                    <button class="tab-btn" data-tab="objectives">Objectives <span class="tab-key">5</span></button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <div class="container">
+                <!-- Portfolio Overview Tab -->
+                <div id="portfolio" class="tab-panel active">
+                    <h2>Portfolio Overview</h2>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-section">
+                            <h3>Revenue Breakdown</h3>
+                            <div class="revenue-breakdown">
+                                <div class="revenue-item">
+                                    <span class="revenue-label">Organic Sales</span>
+                                    <span class="revenue-value">$102,782.31</span>
+                                    <span class="revenue-percentage">78.0%</span>
+                                </div>
+                                <div class="revenue-item">
+                                    <span class="revenue-label">PPC Sales</span>
+                                    <span class="revenue-value">$28,919.24</span>
+                                    <span class="revenue-percentage">22.0%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-section">
+                            <h3>Brand Portfolio Performance</h3>
+                            <table class="data-table sortable">
+                                <thead>
+                                    <tr>
+                                        <th data-sort="brand">Brand</th>
+                                        <th data-sort="revenue">Revenue</th>
+                                        <th data-sort="share">Portfolio %</th>
+                                        <th data-sort="growth">MoM Growth</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lunovus</td>
+                                        <td>$78,359.56</td>
+                                        <td>59.5%</td>
+                                        <td class="negative">-0.3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MaxiVision</td>
+                                        <td>$32,179.47</td>
+                                        <td>24.4%</td>
+                                        <td class="positive">+3.0%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Advanced Theraceuticals</td>
+                                        <td>$21,162.52</td>
+                                        <td>16.1%</td>
+                                        <td class="positive">+21.2%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand Performance Tab -->
+                <div id="brands" class="tab-panel">
+                    <h2>Brand Performance</h2>
+                    <div class="brand-cards">
+                        <div class="brand-card clickable" data-brand="lunovus">
+                            <div class="brand-header">
+                                <h3>Lunovus</h3>
+                                <div class="brand-status strong">Strong</div>
+                            </div>
+                            <div class="brand-metrics">
+                                <div class="brand-metric">
+                                    <span class="metric-label">Revenue</span>
+                                    <span class="metric-value">$78,359.56</span>
+                                </div>
+                                <div class="brand-metric">
+                                    <span class="metric-label">MoM Growth</span>
+                                    <span class="metric-value negative">-0.3%</span>
+                                </div>
+                                <div class="brand-metric">
+                                    <span class="metric-label">YoY Growth</span>
+                                    <span class="metric-value positive">+11.3%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="brand-card clickable" data-brand="maxivision">
+                            <div class="brand-header">
+                                <h3>MaxiVision</h3>
+                                <div class="brand-status good">Good</div>
+                            </div>
+                            <div class="brand-metrics">
+                                <div class="brand-metric">
+                                    <span class="metric-label">Revenue</span>
+                                    <span class="metric-value">$32,179.47</span>
+                                </div>
+                                <div class="brand-metric">
+                                    <span class="metric-label">MoM Growth</span>
+                                    <span class="metric-value positive">+3.0%</span>
+                                </div>
+                                <div class="brand-metric">
+                                    <span class="metric-label">YoY Growth</span>
+                                    <span class="metric-value positive">+10.0%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="brand-card clickable" data-brand="advanced-theraceuticals">
+                            <div class="brand-header">
+                                <h3>Advanced Theraceuticals</h3>
+                                <div class="brand-status accelerating">Accelerating</div>
+                            </div>
+                            <div class="brand-metrics">
+                                <div class="brand-metric">
+                                    <span class="metric-label">Revenue</span>
+                                    <span class="metric-value">$21,162.52</span>
+                                </div>
+                                <div class="brand-metric">
+                                    <span class="metric-label">MoM Growth</span>
+                                    <span class="metric-value positive">+21.2%</span>
+                                </div>
+                                <div class="brand-metric">
+                                    <span class="metric-label">YoY Growth</span>
+                                    <span class="metric-value positive">+5.7%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PPC Performance Tab -->
+                <div id="ppc" class="tab-panel">
+                    <h2>PPC Performance</h2>
+                    <div class="ppc-overview">
+                        <div class="ppc-metrics">
+                            <div class="ppc-metric">
+                                <span class="metric-label">Total Spend</span>
+                                <span class="metric-value">$12,379.15</span>
+                                <span class="metric-change positive">+30.6%</span>
+                            </div>
+                            <div class="ppc-metric">
+                                <span class="metric-label">Total Sales</span>
+                                <span class="metric-value">$28,919.24</span>
+                                <span class="metric-change positive">+29.7%</span>
+                            </div>
+                            <div class="ppc-metric">
+                                <span class="metric-label">Portfolio ACoS</span>
+                                <span class="metric-value">42.8%</span>
+                            </div>
+                            <div class="ppc-metric">
+                                <span class="metric-label">Portfolio ROAS</span>
+                                <span class="metric-value">2.34</span>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="data-table sortable">
+                        <thead>
+                            <tr>
+                                <th data-sort="brand">Brand</th>
+                                <th data-sort="spend">Spend</th>
+                                <th data-sort="sales">Sales</th>
+                                <th data-sort="acos">ACoS</th>
+                                <th data-sort="roas">ROAS</th>
+                                <th data-sort="growth">Sales Growth</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lunovus</td>
+                                <td>$6,588.37</td>
+                                <td>$18,555.35</td>
+                                <td class="warning">35.5%</td>
+                                <td>2.82</td>
+                                <td class="positive">+12.1%</td>
+                            </tr>
+                            <tr>
+                                <td>MaxiVision</td>
+                                <td>$1,255.19</td>
+                                <td>$4,999.13</td>
+                                <td class="positive">25.1%</td>
+                                <td>3.98</td>
+                                <td class="positive">+134.0%</td>
+                            </tr>
+                            <tr>
+                                <td>Advanced Theraceuticals</td>
+                                <td>$4,535.59</td>
+                                <td>$5,364.76</td>
+                                <td class="negative">84.5%</td>
+                                <td>1.18</td>
+                                <td class="positive">+48.9%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Traffic Analysis Tab -->
+                <div id="traffic" class="tab-panel">
+                    <h2>Traffic Analysis</h2>
+                    <div class="traffic-overview">
+                        <div class="traffic-metric">
+                            <span class="metric-label">Total Sessions</span>
+                            <span class="metric-value">10,646</span>
+                            <span class="metric-change positive">+67.4%</span>
+                        </div>
+                        <div class="traffic-metric">
+                            <span class="metric-label">Page Views</span>
+                            <span class="metric-value">14,908</span>
+                            <span class="metric-change positive">+66.6%</span>
+                        </div>
+                        <div class="traffic-metric">
+                            <span class="metric-label">Pages/Session</span>
+                            <span class="metric-value">1.40</span>
+                        </div>
+                        <div class="traffic-metric">
+                            <span class="metric-label">Conversion Rate</span>
+                            <span class="metric-value">38.1%</span>
+                        </div>
+                    </div>
+                    <table class="data-table sortable">
+                        <thead>
+                            <tr>
+                                <th data-sort="brand">Brand</th>
+                                <th data-sort="sessions">Sessions</th>
+                                <th data-sort="conversion">Conversion Rate</th>
+                                <th data-sort="units">Units Sold</th>
+                                <th data-sort="price">Avg Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lunovus</td>
+                                <td>5,568</td>
+                                <td class="positive">51.1%</td>
+                                <td>2,846</td>
+                                <td>$27.53</td>
+                            </tr>
+                            <tr>
+                                <td>MaxiVision</td>
+                                <td>3,161</td>
+                                <td>18.9%</td>
+                                <td>597</td>
+                                <td>$53.90</td>
+                            </tr>
+                            <tr>
+                                <td>Advanced Theraceuticals</td>
+                                <td>1,917</td>
+                                <td class="positive">31.7%</td>
+                                <td>608</td>
+                                <td>$34.81</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Strategic Objectives Tab -->
+                <div id="objectives" class="tab-panel">
+                    <h2>Strategic Objectives</h2>
+                    <div class="objectives-grid">
+                        <div class="objective-card">
+                            <h3>Brand Ownership & Control</h3>
+                            <p>Establish officially recognised brand stores where gaps exist, ensuring complete control over customer experience and intellectual property protection</p>
+                            <div class="status priority">High Priority</div>
+                        </div>
+                        <div class="objective-card">
+                            <h3>Brand Store Enhancement</h3>
+                            <p>Revamp the Advanced Theraceuticals Brand Store to deliver significantly improved customer experience and navigation</p>
+                            <div class="status in-progress">In Progress</div>
+                        </div>
+                        <div class="objective-card">
+                            <h3>Marketing Innovation</h3>
+                            <p>Expand Amazon A+ Content implementation across product listings to enhance conversion rates and brand storytelling</p>
+                            <div class="status planning">Planning</div>
+                        </div>
+                        <div class="objective-card">
+                            <h3>Product Optimisation Excellence</h3>
+                            <p>Implement comprehensive backend enhancements targeting listing health scores of ≥9/10 for all SKUs by August 1, 2025</p>
+                            <div class="status urgent">Urgent</div>
+                        </div>
+                        <div class="objective-card">
+                            <h3>Category Leadership Expansion</h3>
+                            <p>Deliver comprehensive product expansion plan for Eyelid Wipes range within one week, including additional size proposals supported by extensive market research</p>
+                            <div class="status urgent">Urgent</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Detail Modal -->
+    <div id="brand-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-brand-details"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

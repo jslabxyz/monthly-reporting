@@ -124,8 +124,8 @@ body {
 }
 .metrics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 48px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
     margin-bottom: 48px;
 }
 .metric-card {
@@ -444,12 +444,19 @@ body {
 /* Responsive Design */
 @media (max-width: 900px) {
     .metrics-grid, .brand-cards, .objectives-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     .modal-content {
         padding: 20px;
     }
 }
+
+@media (max-width: 700px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 600px) {
     .dashboard-title {
         font-size: 1.5rem;

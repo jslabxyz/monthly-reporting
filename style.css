@@ -20,7 +20,7 @@ body {
 
 /* Header */
 .dashboard-header {
-    background: linear-gradient(90deg, #1ecbe1 0%, #1e90ff 100%);
+    background: #004068;
     color: #fff;
     padding: 48px 0 32px 0;
     text-align: center;

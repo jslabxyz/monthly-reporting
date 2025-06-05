@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSortableTables();
     initializeKeyboardNavigation();
     initializeModal();
-
+    
     // Tab Navigation System
     function initializeTabs() {
         const tabButtons = document.querySelectorAll('.nav-tab');
         const tabContents = document.querySelectorAll('.tab-content');
-
+        
         tabButtons.forEach((button, index) => {
             button.addEventListener('click', function() {
                 const targetTab = this.getAttribute('data-tab');
@@ -20,23 +20,23 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
+    
     function activateTab(targetTab, tabButtons, tabContents) {
         // Remove active class from all tabs and contents
         tabButtons.forEach(btn => btn.classList.remove('active'));
         tabContents.forEach(content => content.classList.remove('active'));
-
+        
         // Add active class to selected tab and content
         document.querySelector(`[data-tab="${targetTab}"]`).classList.add('active');
         document.getElementById(targetTab).classList.add('active');
-
+        
         // Smooth scroll to content area
         document.querySelector('.dashboard-content').scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });
     }
-
+    
     // Keyboard Navigation (1-5 keys for tabs)
     function initializeKeyboardNavigation() {
         document.addEventListener('keydown', function(e) {
@@ -47,45 +47,45 @@ document.addEventListener('DOMContentLoaded', function() {
                 '4': 'traffic',
                 '5': 'objectives'
             };
-
+            
             if (tabMap[e.key]) {
                 e.preventDefault();
                 const tabButtons = document.querySelectorAll('.nav-tab');
                 const tabContents = document.querySelectorAll('.tab-content');
                 activateTab(tabMap[e.key], tabButtons, tabContents);
             }
-
+            
             // ESC key to close modal
             if (e.key === 'Escape') {
                 closeModal();
             }
         });
     }
-
+    
     // Animated Metric Counters
     function initializeMetricCounters() {
         const metricValues = document.querySelectorAll('.metric-value[data-target]');
-
+        
         metricValues.forEach(element => {
             const target = parseFloat(element.getAttribute('data-target'));
             const prefix = element.textContent.includes('$') ? '$' : '';
             const suffix = '';
-
+            
             animateCounter(element, 0, target, 2000, prefix, suffix);
         });
     }
-
+    
     function animateCounter(element, start, end, duration, prefix = '', suffix = '') {
         const startTime = performance.now();
-
+        
         function updateCounter(currentTime) {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-
+            
             // Use easing function for smooth animation
             const easedProgress = easeOutQuart(progress);
             const current = start + (end - start) * easedProgress;
-
+            
             // Format number based on magnitude
             let displayValue;
             if (end > 1000) {
@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 displayValue = current.toFixed(2);
             }
-
+            
             element.textContent = prefix + displayValue + suffix;
-
+            
             if (progress < 1) {
                 requestAnimationFrame(updateCounter);
             } else {
@@ -107,35 +107,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-
+        
         requestAnimationFrame(updateCounter);
     }
-
+    
     function easeOutQuart(t) {
         return 1 - Math.pow(1 - t, 4);
     }
-
+    
     // Brand Cards Interactivity
     function initializeBrandCards() {
         const brandCards = document.querySelectorAll('.brand-card.clickable');
-
+        
         brandCards.forEach(card => {
             card.addEventListener('click', function() {
                 const brandData = getBrandData(this.getAttribute('data-brand'));
                 showBrandModal(brandData);
             });
-
+            
             // Add hover effect
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-5px)';
             });
-
+            
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
             });
         });
     }
-
+    
     function getBrandData(brandId) {
         const brandData = {
             lunovus: {
@@ -199,37 +199,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         };
-
+        
         return brandData[brandId];
     }
-
+    
     // Modal Functionality
     function initializeModal() {
         const modal = document.getElementById('brandModal');
         const closeBtn = document.querySelector('.close');
-
+        
         closeBtn.addEventListener('click', closeModal);
-
+        
         window.addEventListener('click', function(event) {
             if (event.target === modal) {
                 closeModal();
             }
         });
     }
-
+    
     function showBrandModal(brandData) {
         const modal = document.getElementById('brandModal');
         const modalContent = document.getElementById('modalContent');
-
+        
         const statusClass = brandData.rating.toLowerCase();
         const growthClass = brandData.momGrowth.includes('+') ? 'positive' : 'negative';
-
+        
         modalContent.innerHTML = `
             <h2>${brandData.name} - Detailed Performance</h2>
             <div class="modal-brand-header">
                 <span class="brand-status ${statusClass}">${brandData.rating}</span>
             </div>
-
+            
             <div class="modal-metrics-grid">
                 <div class="modal-section">
                     <h3>Revenue Performance</h3>
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="modal-section">
                     <h3>Operational Metrics</h3>
                     <div class="modal-metric-group">
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="modal-section">
                     <h3>PPC Performance</h3>
                     <div class="modal-metric-group">
@@ -306,10 +306,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         `;
-
+        
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
-
+        
         // Add modal styles
         const modalStyles = `
             <style>
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     gap: 30px;
                 }
                 .modal-section h3 {
-                    color: #1e3a8a;
+                    color: #1ecbe1;
                     margin-bottom: 20px;
                     font-size: 1.2rem;
                     border-bottom: 2px solid #e5e7eb;
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             </style>
         `;
-
+        
         if (!document.querySelector('#modal-styles')) {
             const styleSheet = document.createElement('style');
             styleSheet.id = 'modal-styles';
@@ -366,51 +366,51 @@ document.addEventListener('DOMContentLoaded', function() {
             document.head.appendChild(styleSheet);
         }
     }
-
+    
     function closeModal() {
         const modal = document.getElementById('brandModal');
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
-
+    
     // Sortable Tables
     function initializeSortableTables() {
         const sortableTables = document.querySelectorAll('.data-table.sortable');
-
+        
         sortableTables.forEach(table => {
             const headers = table.querySelectorAll('th[data-sort]');
-
+            
             headers.forEach(header => {
                 header.addEventListener('click', function() {
                     const sortKey = this.getAttribute('data-sort');
                     const tbody = table.querySelector('tbody');
                     const rows = Array.from(tbody.querySelectorAll('tr'));
-
+                    
                     // Determine sort direction
                     const currentDirection = this.getAttribute('data-direction') || 'asc';
                     const newDirection = currentDirection === 'asc' ? 'desc' : 'asc';
-
+                    
                     // Clear previous sort indicators
                     headers.forEach(h => {
                         h.removeAttribute('data-direction');
                         h.style.background = '';
                     });
-
+                    
                     // Set new sort indicator
                     this.setAttribute('data-direction', newDirection);
                     this.style.background = '#e5e7eb';
-
+                    
                     // Sort rows
                     const columnIndex = Array.from(header.parentElement.children).indexOf(header);
-
+                    
                     rows.sort((a, b) => {
                         const aVal = a.children[columnIndex].textContent.trim();
                         const bVal = b.children[columnIndex].textContent.trim();
-
+                        
                         // Handle different data types
                         let aNum = parseFloat(aVal.replace(/[$,%+]/g, ''));
                         let bNum = parseFloat(bVal.replace(/[$,%+]/g, ''));
-
+                        
                         if (!isNaN(aNum) && !isNaN(bNum)) {
                             return newDirection === 'asc' ? aNum - bNum : bNum - aNum;
                         } else {
@@ -419,10 +419,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                 bVal.localeCompare(aVal);
                         }
                     });
-
+                    
                     // Re-append sorted rows
                     rows.forEach(row => tbody.appendChild(row));
-
+                    
                     // Add visual feedback
                     tbody.style.opacity = '0.7';
                     setTimeout(() => {
@@ -432,7 +432,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
+    
     // Smooth scrolling for internal links
     function initializeSmoothScrolling() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -448,10 +448,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
+    
     // Initialize smooth scrolling
     initializeSmoothScrolling();
-
+    
     // Add print functionality
     function initializePrint() {
         // Add print button if needed
@@ -472,28 +472,28 @@ document.addEventListener('DOMContentLoaded', function() {
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
             z-index: 1000;
         `;
-
+        
         printBtn.addEventListener('click', () => {
             window.print();
         });
-
+        
         document.body.appendChild(printBtn);
     }
-
+    
     // Initialize print functionality
     initializePrint();
-
+    
     // Add loading states and error handling
     function showLoadingState(element) {
         element.style.opacity = '0.6';
         element.style.pointerEvents = 'none';
     }
-
+    
     function hideLoadingState(element) {
         element.style.opacity = '1';
         element.style.pointerEvents = 'auto';
     }
-
+    
     // Performance monitoring
     function logPerformance() {
         if (typeof performance !== 'undefined' && performance.timing) {
@@ -501,10 +501,10 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(`Dashboard loaded in ${loadTime}ms`);
         }
     }
-
+    
     // Log performance after page load
     window.addEventListener('load', logPerformance);
-
+    
     // Add accessibility improvements
     function initializeAccessibility() {
         // Add ARIA labels
@@ -512,12 +512,12 @@ document.addEventListener('DOMContentLoaded', function() {
             tab.setAttribute('role', 'tab');
             tab.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
         });
-
+        
         document.querySelectorAll('.tab-content').forEach((content, index) => {
             content.setAttribute('role', 'tabpanel');
             content.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
         });
-
+        
         // Add keyboard focus indicators
         const style = document.createElement('style');
         style.textContent = `
@@ -530,10 +530,10 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         document.head.appendChild(style);
     }
-
+    
     // Initialize accessibility features
     initializeAccessibility();
-
+    
     console.log('🚀 Amazon Dashboard loaded successfully!');
     console.log('💡 Use keyboard shortcuts 1-5 to navigate between tabs');
     console.log('🖱️ Click on brand cards for detailed information');

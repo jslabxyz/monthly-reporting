@@ -570,37 +570,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize smooth scrolling
     initializeSmoothScrolling();
     
-    // Add print functionality
-    function initializePrint() {
-        // Add print button if needed
-        const printBtn = document.createElement('button');
-        printBtn.textContent = 'Print Report';
-        printBtn.className = 'print-btn';
-        printBtn.style.cssText = `
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #3b82f6;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-            z-index: 1000;
-        `;
-        
-        printBtn.addEventListener('click', () => {
-            window.print();
-        });
-        
-        document.body.appendChild(printBtn);
-    }
-    
-    // Initialize print functionality
-    initializePrint();
-    
     // Add loading states and error handling
     function showLoadingState(element) {
         element.style.opacity = '0.6';

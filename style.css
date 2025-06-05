@@ -111,7 +111,7 @@ body {
 }
 
 .tab-content h2, .tab-content h3 {
-    color: #004068;
+    color: #fff;
     font-weight: 700;
     margin-bottom: 32px;
 }
@@ -237,7 +237,7 @@ body {
 }
 .data-table th {
     background: #20232a;
-    color: #004068;
+    color: #fff;
     font-weight: 700;
     border-bottom: 2px solid #23262f;
 }
@@ -315,8 +315,8 @@ body {
 }
 
 .brand-header h3 {
-    font-size: 1.2rem;
-    color: #004068;
+    font-size: 2.2rem;
+    color: #fff;
     margin: 0;
     transition: color 0.3s ease;
 }
@@ -431,7 +431,7 @@ body {
     transform: translateX(100%);
 }
 .objective-card h3 {
-    color: #004068;
+    color: #fff;
     margin-bottom: 16px;
     font-size: 1.1rem;
 }

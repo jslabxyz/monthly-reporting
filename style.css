@@ -125,21 +125,21 @@ body {
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 32px;
+    gap: 48px;
     margin-bottom: 48px;
 }
 .metric-card {
     background: #23262f;
     border-radius: 18px;
-    padding: 36px 28px;
+    padding: 42px 32px;
     text-align: left;
     box-shadow: 0 4px 24px rgba(30, 203, 225, 0.04);
     border: 1px solid #23262f;
     position: relative;
-    min-height: 120px;
+    min-height: 160px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     transform: translateY(0);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
@@ -172,7 +172,7 @@ body {
     font-size: 2.2rem;
     font-weight: 800;
     color: #fff;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -185,7 +185,7 @@ body {
     font-size: 1rem;
     color: #b0b6c3;
     font-weight: 500;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     transition: color 0.3s ease;
 }
 
@@ -199,7 +199,7 @@ body {
     padding: 4px 16px;
     border-radius: 999px;
     display: inline-block;
-    margin-top: 8px;
+    margin-top: 12px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -471,4 +471,21 @@ body {
     .tab-content { display: block !important; page-break-inside: avoid; margin-bottom: 30px; }
     .dashboard-header { background: #1ecbe1 !important; -webkit-print-color-adjust: exact; }
     .brand-card, .metric-card, .objective-card { box-shadow: none; border: 1px solid #23262f; }
+}
+
+/* Ripple Effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    background-color: rgba(30, 203, 225, 0.2);
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
 }

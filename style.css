@@ -46,7 +46,7 @@ body {
     color: #e0e6ed;
 }
 .executive-summary h2 {
-    color: #1ecbe1;
+    color: #fff;
     font-size: 1.3rem;
     margin-bottom: 10px;
 }
@@ -81,7 +81,7 @@ body {
     outline: none;
 }
 .nav-tab.active {
-    background: linear-gradient(90deg, #1ecbe1 0%, #1e90ff 100%);
+    background: #004068;
     color: #fff;
     box-shadow: 0 2px 12px rgba(30, 203, 225, 0.10);
 }
@@ -111,7 +111,7 @@ body {
 }
 
 .tab-content h2, .tab-content h3 {
-    color: #1ecbe1;
+    color: #004068;
     font-weight: 700;
     margin-bottom: 32px;
 }
@@ -237,7 +237,7 @@ body {
 }
 .data-table th {
     background: #20232a;
-    color: #1ecbe1;
+    color: #004068;
     font-weight: 700;
     border-bottom: 2px solid #23262f;
 }
@@ -316,7 +316,7 @@ body {
 
 .brand-header h3 {
     font-size: 1.2rem;
-    color: #1ecbe1;
+    color: #004068;
     margin: 0;
     transition: color 0.3s ease;
 }
@@ -431,7 +431,7 @@ body {
     transform: translateX(100%);
 }
 .objective-card h3 {
-    color: #1ecbe1;
+    color: #004068;
     margin-bottom: 16px;
     font-size: 1.1rem;
 }

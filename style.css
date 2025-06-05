@@ -40,7 +40,7 @@ body {
 .executive-summary {
     background: rgba(24, 26, 32, 0.7);
     border-radius: 14px;
-    padding: 28px;
+    padding: 32px;
     margin-top: 18px;
     border: 1px solid #23262f;
     color: #e0e6ed;
@@ -140,26 +140,71 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    overflow: hidden;
 }
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(30, 203, 225, 0.03), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.metric-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(30, 203, 225, 0.12);
+    border-color: rgba(30, 203, 225, 0.2);
+}
+
+.metric-card:hover::before {
+    transform: translateX(100%);
+}
+
 .metric-value {
     font-size: 2.2rem;
     font-weight: 800;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
+
+.metric-card:hover .metric-value {
+    transform: scale(1.05);
+    color: #1ecbe1;
+}
+
 .metric-label {
     font-size: 1rem;
     color: #b0b6c3;
     font-weight: 500;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
 }
+
+.metric-card:hover .metric-label {
+    color: #fff;
+}
+
 .metric-change {
     font-size: 0.95rem;
     font-weight: 700;
     padding: 4px 16px;
     border-radius: 999px;
     display: inline-block;
-    margin-top: 6px;
+    margin-top: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.metric-card:hover .metric-change {
+    transform: translateX(4px);
 }
 .metric-change.positive {
     background: #1ecbe1;
@@ -230,28 +275,66 @@ body {
     box-shadow: 0 4px 24px rgba(30, 203, 225, 0.04);
     border: 1px solid #23262f;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
+
+.brand-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(30, 203, 225, 0.03), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
 .brand-card:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 8px 32px rgba(30, 203, 225, 0.10);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(30, 203, 225, 0.15);
+    border-color: rgba(30, 203, 225, 0.2);
 }
+
+.brand-card:hover::before {
+    transform: translateX(100%);
+}
+
 .brand-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
+    transition: transform 0.3s ease;
 }
+
+.brand-card:hover .brand-header {
+    transform: translateY(-4px);
+}
+
 .brand-header h3 {
     font-size: 1.2rem;
     color: #1ecbe1;
     margin: 0;
+    transition: color 0.3s ease;
 }
+
+.brand-card:hover .brand-header h3 {
+    color: #fff;
+}
+
 .brand-status {
     padding: 5px 16px;
     border-radius: 999px;
     font-size: 0.95rem;
     font-weight: 700;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.brand-card:hover .brand-status {
+    transform: scale(1.05);
 }
 .brand-status.strong {
     background: #1ecbe1;
@@ -320,6 +403,32 @@ body {
     box-shadow: 0 4px 24px rgba(30, 203, 225, 0.04);
     border: 1px solid #23262f;
     color: #e0e6ed;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.objective-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(30, 203, 225, 0.03), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.objective-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 32px rgba(30, 203, 225, 0.12);
+    border-color: rgba(30, 203, 225, 0.2);
+}
+
+.objective-card:hover::before {
+    transform: translateX(100%);
 }
 .objective-card h3 {
     color: #1ecbe1;
